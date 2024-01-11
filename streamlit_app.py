@@ -4,6 +4,15 @@ import pandas as pd
 import streamlit as st
 from datetime import time, datetime
 
+st.write('Hello world!')
+
+st.header('st.button')
+
+if st.button('Say hello'):
+     st.write('Why hello there')
+else:
+     st.write('Goodbye')
+
 st.header('st.write')
 
 # 样例 1
@@ -71,3 +80,12 @@ start_time = st.slider(
      value=datetime(2020, 1, 1, 9, 30),
      format="MM/DD/YY - hh:mm")
 st.write("Start time:", start_time)
+
+
+st.header('Line chart')
+
+chart_data = pd.DataFrame(
+     np.random.randn(20, 3),
+     columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
